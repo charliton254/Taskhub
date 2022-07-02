@@ -1,0 +1,151 @@
+.App {
+    text-align: center;
+  }
+  .nav-bar{
+    justify-content: space-around;
+    height: 15vh;
+    background-color: #2F4050;
+    align-items: center;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+  }
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .logo-cont{
+    height: 92%;
+    width: 22%;
+    display: flex;
+    color: white;
+  }
+  .logo{
+    height: 90%;
+    width: 20%;
+  }
+  .logo-name{
+    text-align: center;
+    font-size: 300%;
+  }
+  .slogan{
+    text-align: center;
+    font-family: cursive;
+    font-style: italic;
+    color: brown;
+    font-weight: 900;
+  }
+  .nav-links{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 700; 
+    color: white;
+  }
+  .workspace{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+  }
+  .task input{
+    margin-top: 3vh;
+    min-width: 400px;
+  }
+  .card{
+    width: 310px;
+    min-height: 20vh;
+    padding: 2px;
+    margin: 3vh;
+    border: 1px solid black;
+    
+  }
+  .cardslist{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .workspace {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .datepicker{
+    width: 100%;
+  }
+  .cardtask{
+    height: 13vh;
+    border: 1px solid black;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  .cardbtns{
+    border: 1px solid black;
+    height: 7vh;
+    display: flex;
+  }
+  .delete, .start, .resume{
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: 1px solid black;
+    margin: 2px 7px 2px 2px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    width: 24%;
+    font-weight: 500;
+  }
+  .edit{
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: 1px solid black;
+    margin: 2px 7px 2px 2px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    width: 18%;
+    font-weight: 500;
+  }
+  .stop{
+    cursor: pointer;
+    background-color: maroon;
+    font-size: 16px;
+    width: 24%;
+    color: white;
+    margin: 2px 7px 2px 2px;
+    font-weight: 500;
+
+  }
+  .edit-panel {
+    display: flex;
+  }
+
+  .edit-panel > input {
+    flex-grow: 1;
+  }
+  .time-input{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 26%;
+    margin: 2px 4px 2px 2px;
+    border: 1px solid black;
+  }
+  .logout-btn{
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .logout-btn:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-out;
+  }
+  

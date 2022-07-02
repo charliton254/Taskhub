@@ -1,0 +1,52 @@
+
+.adminuser, .admintask{
+    display: flex;
+}
+.admin-workspace, .taskspace{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.users{
+    display: flex;
+    flex-wrap: wrap;
+}
+.adminsidebar{
+    width: 16%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 3px;
+    background-color: #2F4050;
+    border-top: 1px solid white;
+}
+.admincard{
+    width: 230px;
+    height: 12vh;
+    margin: 3vh;
+    padding: 2px;
+    border: 1px solid black;
+    background-color: lightgreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.admincard:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-out;
+}
+.admin-wel{
+    color: white;
+    text-align: center;
+}
+.taskcard{
+    width: 260px;
+    height: 12vh;
+    margin: 3vh;
+    padding: 2px;
+    border: 1px solid black;
+    background-color: lightgreen;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
