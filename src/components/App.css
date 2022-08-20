@@ -62,7 +62,7 @@
     padding: 2px;
     margin: 3vh;
     border: 1px solid black;
-    
+    background-image: linear-gradient(to right, rgb(238, 137, 238), rgb(171, 171, 241));
   }
   .cardslist{
     display: flex;
@@ -79,9 +79,10 @@
   }
   .cardtask{
     height: 13vh;
-    border: 1px solid black;
     font-weight: 600;
+    font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(238, 137, 238), rgb(171, 171, 241));
 
   }
   .cardbtns{
@@ -98,8 +99,14 @@
     text-align: center;
     font-size: 16px;
     width: 24%;
-    font-weight: 500;
+    font-weight: 600;
+    background-image: linear-gradient(to right, purple, rgb(40, 40, 212));
   }
+  .delete:hover, .start:hover, .edit:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-out;
+  }
+
   .edit{
     cursor: pointer;
     background-color: #4CAF50;
@@ -110,6 +117,7 @@
     font-size: 16px;
     width: 18%;
     font-weight: 500;
+     background-image: linear-gradient(to right, purple, rgb(40, 40, 212));
   }
   .stop{
     cursor: pointer;
@@ -147,5 +155,33 @@
   .logout-btn:hover{
     transform: scale(1.06);
     transition: all 0.2s ease-out;
+  }
+  .calendar-btn{
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .calendar{
+    text-align: center;
+  }
+  .calendar-contents{
+    display: flex;
+    margin-right: 14%;
+    padding: 2%;
+    align-items: center;
+    margin-left: 14%;
+  }
+  .btn-calendar{
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 30%;
+    background-image: linear-gradient(to right, purple, rgb(40, 40, 212));
+
   }
   

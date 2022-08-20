@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import "./Admin.css";
-import "../../App.css";
 import Adminsidebar from './Adminsidebar';
 import { db } from '../../firebase-cofig'
 import { Link } from "react-router-dom";
-import { collection, doc, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 
 function Adashboard() {
   const [ users, setUsers ] = useState ([])
@@ -34,7 +33,6 @@ if (loading) {
     <div className='adminuser'>
       <Adminsidebar/>
       <div className='admin-workspace'>
-        <h2 className="slogan">Task Management made simple</h2>
        <div className='users'>
          
           {/* {Object.keys(users).map((key, index) =>{
@@ -47,7 +45,6 @@ if (loading) {
          })}  */}
 
           {Object.values(users).map((user) =>{
-          // console.log( user.data )
           return(
               <Link to={`/admintasks/${user.id}`} style={{textDecoration:'none', color:"black"}} >
               <div className='admincard'>
@@ -55,9 +52,6 @@ if (loading) {
               <p>{user.data.id}</p>
               </div>
               </Link>
-            // <div>   
-            //    <li> {user.data.username} {user.data.id} </li> 
-            // </div>
           );
          })} 
 
@@ -68,7 +62,6 @@ if (loading) {
 
   )
 }
-
 export default Adashboard
 
 

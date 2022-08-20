@@ -78,6 +78,7 @@ function Card({task, id}) {
                     <button className='edit' onClick={() =>{setEditMode(!editMode);
                 }}>Edit</button>
                 <button className='start' onClick={() => manageTime()}>Start</button>
+                
                 <div className='time-input'>
                     {getTime()}
                 </div>

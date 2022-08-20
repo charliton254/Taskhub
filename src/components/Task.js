@@ -3,23 +3,32 @@ import "./App.css";
 import { db } from '../firebase-cofig'
 import { collection, addDoc, onSnapshot, query, where } from "firebase/firestore"
 import Card from "../components/Card";
+import moment from 'moment'; 
 
 function Task() {
   const [newTask, setNewTask] = useState("")
   const [tasks, setTask] = useState ([]);
   const tasksCollectionRef = collection(db, "tasks")
 
+
   const addTask = async () => {
     await addDoc(tasksCollectionRef, {
       task: newTask,
+      createdAt: moment().format("MMM Do YY"),
       timelines: [
         {
           startTime: (new Date).getTime(),
           endTime: (new Date).getTime(),
         }
       ],
-      ownerID: localStorage.getItem('userId')
+      ownerID: localStorage.getItem('userId')    
     })
+  }
+
+  const handleSubmit = e =>{
+    e.preventDefault();
+
+    setNewTask('');
   }
 
   useEffect(() => {
@@ -44,13 +53,13 @@ function Task() {
       <div>
           <h2 className="slogan">Task Management made simple</h2>
       </div>
-      <div className="task">      
+      <form className="task" onSubmit={handleSubmit}>      
           <input type='text' className='add-task' name='text' id='text' placeholder='Add task here'
-          onChange={(event) => {setNewTask(event.target.value);}}/>
+          onChange={(event) => {setNewTask(event.target.value);}} value={newTask} />
           <button className='add-btn' onClick={() => {
             addTask()
           }}>Add</button>
-      </div>
+      </form>
       <ul className='cardslist'>
         {tasks.map((task) =>{
           return(
