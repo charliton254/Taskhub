@@ -3,6 +3,9 @@ import "./About.css";
 import StarRateIcon from '@mui/icons-material/StarRate';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import {MdFingerprint} from 'react-icons/md';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function About(){
   return(
@@ -114,9 +117,18 @@ function About(){
                 <div className="logo-name">TASKHUB</div>
               </div>
               <div className='footermedia'>
-                  <img src='./images/twitter.png' className='twitter' alt=''></img>
-                  <img src='./images/Fb.png' className='Fb' alt=''></img>
-                  <img src='./images/IG.jpg' className='IG' alt=''></img>
+              <a href='https://twitter.com/CharlieClint1'
+                rel='noopener noreferrer' target='_blank' className='twitter' >
+                <TwitterIcon/>
+              </a>
+              <a href='https://facebook.com'
+                rel='noopener noreferrer' target='_blank' className='Fb' >
+                <FacebookIcon/>
+              </a>
+              <a href='https://instagram.com'
+                rel='noopener noreferrer' target='_blank' className='IG' >
+                <InstagramIcon/>
+              </a>
               </div>
           </div>
           <p className='copy'>© Copyright 2022. All rights reserved.</p>
