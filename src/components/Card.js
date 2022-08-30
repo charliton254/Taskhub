@@ -6,6 +6,7 @@ import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 function Card({task, id}) {
     let timelines = task.timelines;
     let editPanel;
+    let buttonText = timelines[timelines.length - 1].endTime !== null ? 'Start' : 'Stop';
     const [editMode, setEditMode] = useState(false);
     const [taskName, setTaskName] = useState("");
 
@@ -39,8 +40,10 @@ function Card({task, id}) {
                 startTime: (new Date).getTime(),
                 endTime: null
             })
+            buttonText = 'Stop';
         } else {
             timelines[timelines.length - 1].endTime = (new Date).getTime()
+            buttonText = 'Start';
         }
         await updateDoc(doc(db, "tasks", id), {
             timelines
@@ -67,7 +70,7 @@ function Card({task, id}) {
     }
 
     return(
-        <div className='card'> 
+        <div className='main-card'> 
             <div className='cardtask'> 
                 {task.task}
             </div>
@@ -77,7 +80,12 @@ function Card({task, id}) {
                     </button>
                     <button className='edit' onClick={() =>{setEditMode(!editMode);
                 }}>Edit</button>
-                <button className='start' onClick={() => manageTime()}>Start</button>
+                {buttonText === "Start" && (
+                    <button className='start' onClick={() => manageTime()}>{buttonText}</button>
+                )}
+                {buttonText === "Stop" && (
+                    <button className='stop' onClick={() => manageTime()}>{buttonText}</button>
+                )}
                 
                 <div className='time-input'>
                     {getTime()}

@@ -1,21 +1,16 @@
-import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import React, { useEffect, useState } from "react";
-import { Calendar, momentLocalizer, dateFnsLocalizer } from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 import { db } from '../firebase-cofig'
-import { collection, addDoc, onSnapshot, query, where, Timestamp } from "firebase/firestore"
+import { collection, addDoc, onSnapshot, query, where } from "firebase/firestore"
 import moment from 'moment'
-
-// const locales = {
-//   'en-US': enUS,
-// };
+import { Link } from "react-router-dom";
 
 const localizer = momentLocalizer(moment);
-const DnDCalendar = withDragAndDrop(Calendar);
 
 const events = [];
 
@@ -45,17 +40,6 @@ function CalendarView() {
       setNewEvent(''); 
     }
 
-    // const onEventDrop = ({ event, start, end }) => {
-    //   const thisEvent = event;
- 
-    // const nextEvents = allEvents.map((existingEvent) => {
-    //   return existingEvent.id == event.id
-    //     ? { ...existingEvent, start, end }
-    //     : existingEvent;
-    // });
-    // setAllEvents(nextEvents);   
-    // };
-
     useEffect (()=> {
       const q = query(eventsCollectionRef, where("ownerID", "==", localStorage.getItem('userId')));
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -70,22 +54,14 @@ function CalendarView() {
       setAllEvents(data);
     });
     return unsubscribe;
-
-
-      // const eventData = window.localStorage.getItem('Events');
-      // if (eventData) {
-      //   setAllEvents(JSON.parse(eventData));
-      // }
     }, []);
-
-    // useEffect (()=> {
-    //   window.localStorage.setItem('Events', JSON.stringify(allEvents));
-    // }, [allEvents]);
 
   return(
     <div className="calendar">
-      <h1>Calendar View</h1>
-      <h3>Add New Event</h3>
+      <Link to={"/dashboard"}>
+        <button className="go-back">Go Back to Dashboard</button>
+      </Link>
+      <h4 className="slogan">Add New Event</h4>
       <form className="calendar-contents" onSubmit={handleSubmit}>
         <input className="custom-input" type="text" placeholder="Add Title" style={{ width: "80%" }}
         value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
@@ -95,7 +71,7 @@ function CalendarView() {
         <button className="btn-calendar" onClick={handleAddEvent}>Add Event
          </button>
       </form>
-      <DnDCalendar 
+      <Calendar 
        defaultDate={moment().toDate()}
        defaultView="month"
        localizer={localizer}
@@ -103,7 +79,6 @@ function CalendarView() {
        startAccessor="start" 
        endAccessor="end" 
        selectable 
-       resizable
        style={{ height: 500, padding: "2%" }} 
        />
 

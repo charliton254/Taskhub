@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(241, 237, 237);
 }
 .users, .real-tasks{
     display: flex;
@@ -24,34 +25,56 @@
     border-top: 1px solid white;
 }
 .admincard{
-    width: 230px;
-    height: 10vh;
+    width: 240px;
+    min-height: 14vh;
+    padding: 2px;
     margin: 3vh;
-    padding: 3%;
-    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    background-color: white;
     border: 1px solid black;
-    background-image: linear-gradient(to right, rgb(224, 120, 224), rgb(122, 122, 226));
+}
+.admincard-name{
+    height: 9vh;
+    font-weight: 600;
+    font-size: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
 }
-.admincard:hover{
+.admincard-btns{
+    border: 1px solid black;
+    height: 5vh;
+    border-radius: 5px;
+}
+.view-tasks{
+    cursor: pointer;
+    border: 1px solid grey;
+    color: white;
+    text-align: center;
+    height: 4.7vh;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgb(168, 107, 107);
+}
+.view-tasks:hover{
     transform: scale(1.03);
     transition: all 0.3s ease-out;
 }
 .admin-wel{
     color: white;
     text-align: center;
+    padding-top: 3%;
 }
 .taskcard{
     width: 260px;
     height: 16vh;
     margin: 3vh;
     border: 1px solid black;
-    /* background-image: linear-gradient(to right, rgb(224, 120, 224), rgb(122, 122, 226)); */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border-radius: 10px;
-    background-color: rgb(223, 130, 223);
-
+    background-color: white;
+    box-shadow: 10px 10px 10px;
 }
 .task-up{
     height: 8vh;
@@ -61,6 +84,32 @@
 }
 .task-down{
     padding: 0.5%;
-    height: 8vh;
+    height: 4vh;
     line-height: 1;
+    border-bottom: 1px solid gray;
 }
+.task-bottom{
+    height: 4vh;
+    padding: 0.5%;
+}
+.assign-task{
+    width: 150px;
+    height: 60px;
+    margin-top: 5%;
+    font-weight: 700;
+    border-radius: 10px;
+    font-size: larger;
+    background-image: linear-gradient(to right, rgb(224, 120, 224), rgb(122, 122, 226));
+}
+.assign-task:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-out;
+}
+.adashboard-btn{
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+  }

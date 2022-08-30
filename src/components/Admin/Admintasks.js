@@ -4,12 +4,12 @@ import "./Admin.css";
 import Adminsidebar from './Adminsidebar';
 import { db } from '../../firebase-cofig'
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { formatMillis } from '../../utils/formatter';
 
 function Admintasks() {
   const [tasks, setTask] = useState ([]);
   const {id} = useParams("id");
-  
 
   useEffect (() => {
     const c = query(collection(db, "tasks"), where("ownerID", "==", id));
@@ -39,11 +39,11 @@ function Admintasks() {
     <div className='admintask'>
        <Adminsidebar/>
        <div className='taskspace'>
-        <h3 className="slogan">User's Tasks</h3> 
+        <Link to={`/assigntasks/${id}`}>
+          <button className='assign-task'>Assign Task</button>
+        </Link> 
         <div className='real-tasks'>
-
-          {tasks.map((task, timelines) =>{
-            // console.log(task)
+          {tasks.map((task) =>{
             return(
               <div className='taskcard'>
                 <div className='task-up'>
@@ -51,13 +51,13 @@ function Admintasks() {
                 </div>
                 <div className='task-down'>
                   <p>Time: {task.duration}</p>
+                 </div>
+                 <div className='task-bottom'> 
                   <p>Date: {task.date}</p>
                 </div>
-
               </div>
             )
-          })}
-          
+          })}         
         </div> 
        </div>
 

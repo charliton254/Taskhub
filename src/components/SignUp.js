@@ -50,6 +50,7 @@ function SignUp() {
   }
 
   return(
+    <div className="login-surface">
       <Container className="d-flex align-items-center justify-content-center" 
         style={{minHeight: "80vh"}}>
         <div className="w-100" style={{maxWidth:"400px"}}>
@@ -86,153 +87,9 @@ function SignUp() {
 
         </div>
       </Container>
+      </div>
   );
 
 }
 
 export default SignUp
-
-
-
-
-
-// const [error, setError] = useState('')
-//   const [username, setUname] = useState('');
-//   const navigate = useNavigate()
-//   const [registerEmail, setRegisterEmail] = useState("")
-//   const [registerPassword, setRegisterPassword] = useState("")
-//   const [registerConfPassword, setRegisterConfPassword] = useState("")
-//   const { signup } = useAuth
-
-
-//   const signup = async () => {
-//     try{
-//       const user = await createUserWithEmailAndPassword(auth, 
-//         registerEmail, registerPassword).then((result) => {
-//           localStorage.setItem('userId', result.user.uid);
-//           setUsername().then((result) => {
-//             navigate("/dashboard");
-//           }).catch((e) => {
-//             setError(e)
-//           });
-//         });
-//     } catch(error){
-//       console.log(error.message);
-//     }
-//   }
-
-//   const handleSubmit = (event) =>{
-//     event.preventDefault()
-//     if(registerPassword !==
-//       registerConfPassword){
-//               return setError('Passwords do not match')
-//             } 
-//   }
-
-//   const setUsername = async() => {
-//     await setDoc(doc(db, "users", localStorage.getItem('userId')), {
-//       username
-//     });
-//   }
-//       console.log('login');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default function SignUp(){
-//   const emailRef = useRef()
-//   const passwordRef = useRef()
-//   const passwordConfirmRef = useRef()
-//   const {signup} = useAuth()
-//   const [error, setError] = useState('')
-//   const [loading, setLoading] = useState(false)
-//   const [username, setUname] = useState('');
-//   const navigate = useNavigate()
-
-//   const setUsername = async() => {
-//     await setDoc(doc(db, "users", localStorage.getItem('userId')), {
-//       username
-//     });
-//   }
-    
-
-//   async function handleSubmit(e) {
-//     e.preventDefault()
-
-//     if(passwordRef.current.value !==
-//      passwordConfirmRef.current.value){
-//         return setError('Passwords do not match')
-//       }
-//         setLoading(true)
-//         try {
-//           await signup(emailRef.current.value, passwordRef.current.value).then((result) => {
-//             localStorage.setItem('userId', result.user.uid);
-//             setUsername().then((result) => {
-//               navigate("/dashboard");
-//             }).catch((e) => {
-//               setError(e)
-//             });
-//             setLoading(false)
-//           }).catch(setError(e))
-//         } catch (error) {
-//           console.error(error)
-//         }
-//   }
-
-//   console.log('login');
-
-//   return(
-//       <Container className="d-flex align-items-center justify-content-center" 
-//         style={{minHeight: "80vh"}}>
-//         <div className="w-100" style={{maxWidth:"400px"}}>
-//           <Card className="h-100 w-100" >
-//             <Card.Body>
-//               <h2 className="text-center mb-4">SignUp</h2>
-//               {error && <Alert variant="danger">{error}</Alert>}
-//               <Form onSubmit={handleSubmit}>
-//               <Form.Group id="username">
-//                   <Form.Label>Username</Form.Label>
-//                   <Form.Control type="username" onChange={(e)=> {setUname(e.target.value)}} required placeholder="Enter your username"/>
-//                 </Form.Group>
-//                 <Form.Group id="email">
-//                   <Form.Label>Email</Form.Label>
-//                   <Form.Control type="email" ref={emailRef} required placeholder="Enter your email"/>
-//                 </Form.Group>
-//                 <Form.Group id="password">
-//                   <Form.Label>Password</Form.Label>
-//                   <Form.Control type="password" ref={passwordRef} required placeholder="Enter your password"/>
-//                 </Form.Group>
-//                 <Form.Group id="password-confirm">
-//                   <Form.Label>Confirm Password</Form.Label>
-//                   <Form.Control type="password" ref={passwordConfirmRef} required placeholder="Confirm Password"/>
-//                 </Form.Group>
-//                 <Button disabled={loading} className="btn btn-primary mt-3" type="submit"> Sign Up</Button>
-//               </Form>
-//             </Card.Body>
-
-//             <div className="text-center d-flex justify-content-center list-unstyled">
-//               Already have an account?<Link to={"/Login"}><li>Login</li></Link>
-//             </div>
-
-//           </Card>
-
-//         </div>
-//       </Container>
-//   );
-// }

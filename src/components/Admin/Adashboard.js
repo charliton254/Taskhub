@@ -21,7 +21,6 @@ useEffect(() => {
     });
     setUsers(users)
     setLoading(false);
-
   })
 
 }, []);
@@ -34,48 +33,27 @@ if (loading) {
       <Adminsidebar/>
       <div className='admin-workspace'>
        <div className='users'>
-         
-          {/* {Object.keys(users).map((key, index) =>{
-          console.log( users )
-          return(
-            <div key={index}>
-              <h3>{key}:{users}</h3>
-            </div>
-          );
-         })}  */}
-
           {Object.values(users).map((user) =>{
-          return(
-              <Link to={`/admintasks/${user.id}`} style={{textDecoration:'none', color:"black"}} >
+          return(             
               <div className='admincard'>
-              <h4> {user.data.username} </h4>
-              <p>{user.data.id}</p>
+                <div className='admincard-name'>
+                  <h4> {user.data.username} </h4>
+                  <p>{user.data.id}</p>
+                </div>
+                <div className='admincard-btns'>
+                  <Link to={`/admintasks/${user.id}`} style={{textDecoration:'none'}} >
+                  <button className='view-tasks'>
+                    View Tasks for {user.data.username}
+                  </button>
+                  </Link>
+                </div>              
               </div>
-              </Link>
+             
           );
          })} 
-
        </div>
        </div>
-
     </div>
-
   )
 }
 export default Adashboard
-
-
- // useEffect(() => {
-  //   console.log('mounted')
-  //   onSnapshot(collection(db, "users"), (querySnapshot) => {
-  //     querySnapshot.forEach((doc) => {
-  //       users.push({
-  //         data: doc.data(),
-  //         id: doc.id
-  //         // ...doc.data(),
-  //       })
-  //       console.log( users )
-  //     })
-
-  //   })
-  // }, []);

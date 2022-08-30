@@ -26,10 +26,12 @@ function Homeone() {
                     <h2 className='heading2'>Features designed with productivity in mind</h2>
                     <p className='description2'>Unburden yourself from cumbersome task management chores,
                     and focus on what really matters to the success of your business with our enhanced
-                    productivity tools.</p>
+                    productivity tools.Begin your journey with a stress free and highly productive work environment
+                    with Taskhub - your leading task software.</p>
                     <Link to={"/SignUp"}><button className='start-btn'> Start for free</button></Link>
                 </div>
                 <div className='cont2img'>
+                    <img src='./images/pic1.jpg' className='pc2' alt='' ></img>
                 </div>
             </div>
 

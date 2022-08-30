@@ -18,6 +18,7 @@ import Adashboard from "./components/Admin/Adashboard";
 import Adminsidebar from "./components/Admin/Adminsidebar";
 import Admintasks from "./components/Admin/Admintasks";
 import CalendarView from "./components/CalendarView";
+import Assigntasks from "./components/Admin/Assigntasks";
 
 function App(){
   return(
@@ -39,6 +40,7 @@ function App(){
             <Route path ="/logout" element={<Logout />} />
             <Route path ="/adashboard" element={<Adashboard />} />
             <Route path ="/admintasks/:id" element={<Admintasks />} />
+            <Route path ="/assigntasks/:id" element={<Assigntasks />} />
             <Route path ="/adminsidebar" element={<Adminsidebar />} />
             <Route path ="/CalendarView" element={<CalendarView />} />
           </Routes>

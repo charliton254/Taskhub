@@ -36,22 +36,18 @@ export default function Login() {
             navigate("/dashboard");
           }
         } else {
-          // doc.data() will be undefined in this case
+        //   doc.data() will be undefined in this case
           console.log("No such document!");
         }
       })
     } catch {
       setError('Failed to Log In')
     }
-
-    // if( emailRef.current.value === "admin@gmail.com" && passwordRef.current.value === "admin"){
-    //   navigate("/Adashboard")
-    // }
-
     setLoading(false)
   }
 
   return (
+    <div className="login-surface">
     <Container className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "80vh" }}>
       <div className="w-100" style={{ maxWidth: "400px" }}>
@@ -79,5 +75,6 @@ export default function Login() {
 
       </div>
     </Container>
+    </div>
   );
 }
