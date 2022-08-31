@@ -1,12 +1,12 @@
 
 .bg-about{
-    background-image: url('C:\Users\CHARLI\final-project\react-project\public\images\img3.jpg');
+    background-image: url('C:\Users\CHARLI\final-project\react-project\public\images\pic10.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: maroon;
     background-attachment: fixed;
-    min-height: 70vh;
+    min-height: 75vh;
     -webkit-background-size: 100%;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -42,9 +42,6 @@
     width: 100%;
     justify-content: center;
 }
-/* .cards-about p{
-    padding: 0.5%;
-} */
 .carda, .cardb, .cardc, .cardd{
     border: 1px solid black;
     height: 60%;
